@@ -8,13 +8,14 @@
   <body>
     <h1>Formulário de cadastro</h1>
     <form>
-      Nome: <input type="text" placeholder="Nome Completo" />
+      <label for="name">Nome:</label>
+      <input type="text" id="name" placeholder="Nome Completo" />
       <br />
-      E-mail: <input type="email" placeholder="emailexemplo@email.com" />
+      <label for="email">E-mail: </label>
+      <input type="email" id="email" placeholder="emailexemplo@email.com" />
       <br />
-      Senha: <input type="password" placeholder="*******" />
-      <br />
-
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="*******" />
       <button type="submit">Cadastrar</button>
     </form>
   </body>
