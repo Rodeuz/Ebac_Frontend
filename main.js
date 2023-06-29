@@ -1,27 +1,15 @@
-const paragrafo = document.querySelector(".text-verify");
-
-document.getElementById("form-verify").addEventListener("submit", function verificador(e) {
+$("#form-Tarefa").on("submit", function (e) {
   e.preventDefault();
+  const tarefa = $("#input-Tarefa");
 
-  const valor_a = document.getElementById("a-number");
-  const valor_b = document.getElementById("b-number");
+  $(`<li style="text decoration: none">${tarefa.val()}</li>`).appendTo("ul");
+  tarefa.val("");
+});
 
-  if (parseInt(valor_a.value) < parseInt(valor_b.value)) {
-    if (paragrafo.classList.contains("error")) {
-      paragrafo.classList.remove("error");
-    }
-
-    paragrafo.classList.add("sucess");
-    paragrafo.innerHTML = `<strong> Número validado </strong> B é maior do que A`;
-    valor_a.classList.remove("borderError");
-    valor_b.classList.remove("borderError");
+$("ul").on("click", "li", function () {
+  if ($(this).hasClass("feito")) {
+    $(this).removeClass("feito");
   } else {
-    if (paragrafo.classList.contains("sucess")) {
-      paragrafo.classList.remove("sucess");
-    }
-    paragrafo.classList.add("error");
-    paragrafo.innerHTML = `<strong> Número Invalido </strong> A é maior ou igual a B`;
-    valor_a.classList.add("borderError");
-    valor_b.classList.add("borderError");
+    $(this).addClass("feito");
   }
 });
